@@ -1,7 +1,9 @@
 import { Link, routes } from '@redwoodjs/router'
 
 const truncate = (text, length) => {
-  return text.substring(0, length) + '...'
+  return text != null && text.length > length
+    ? text.substring(0, length) + '...'
+    : text
 }
 
 const Article = ({ article, summary = false }) => {
