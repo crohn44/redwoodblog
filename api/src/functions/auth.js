@@ -112,7 +112,11 @@ export const handler = async (event, context) => {
     //
     // If this returns anything else, it will be returned by the
     // `signUp()` function in the form of: `{ message: 'String here' }`.
-    handler: ({
+    handler: ({ userAttributes: _userAttributes }) => {
+      return false
+    },
+
+    handlerOLD: ({
       username,
       hashedPassword,
       salt,
